@@ -1,0 +1,18 @@
+{% extends 'myview.html' %}
+{% block login %}
+<form action="{% url 'login_url' %}" method="post">{% csrf_token %}
+	<label for="username">Имя пользователя</label>
+	<input type="text" name="username" id="username">
+	<label for="password">Пароль</label>
+	<input type="password" name="password" id="password">
+	{% if login_error %}
+	<label class="error">
+		{{login_error}}
+	</label>
+	{% endif %}
+	<input type="submit" name="Войти">
+
+	<a href="{% url 'register_url' %}">Зарегистрироваться</a> 
+</form>
+
+{% endblock %}

@@ -1,0 +1,8 @@
+{% extends 'myview.html' %}
+{% block login %}
+<form action="{% url 'register_url' %}" method="post">{% csrf_token %}
+	{{ form }}
+	<input type="submit" value="Зарегистрироваться">
+</form>
+
+{% endblock %}
